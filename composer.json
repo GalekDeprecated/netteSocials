@@ -9,7 +9,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Galek\\Socials\\": "src/"
+            "Galek\\Socials\\": "src/Galek/Socials/"
         }
     },
     "require": {
