@@ -1,0 +1,13 @@
+{
+    "name": "vendor/nette-socials",
+    "description": "Description of project netteSocials.",
+    "authors": [
+        {
+            "name": "Jan Galek",
+            "email": "admin@gcore.cz"
+        }
+    ],
+    "require": {
+        
+    }
+}
