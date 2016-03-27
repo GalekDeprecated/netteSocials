@@ -7,5 +7,7 @@
             "email": "admin@gcore.cz"
         }
     ],
-    "require": {}
+    "require": {
+        "nette/nette": "~2.0"
+    }
 }
