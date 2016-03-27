@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Galek\NetteSocials\Facebook;
+namespace Galek\Socials\Facebook;
 
 use Nette\Application\UI\Control;
 
@@ -26,7 +26,7 @@ use Nette\Application\UI\Control;
  *
  * @author Jan
  */
-class Facebook extends Control{
+abstract class Facebook extends Control{
     
     /** @var string Facebook API key */
     private $api;
