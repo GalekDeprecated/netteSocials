@@ -1,5 +1,5 @@
 {
-    "name": "vendor/nette-socials",
+    "name": "galek/nette-socials",
     "description": "Description of project netteSocials.",
     "authors": [
         {
@@ -7,7 +7,5 @@
             "email": "admin@gcore.cz"
         }
     ],
-    "require": {
-        
-    }
+    "require": {}
 }
