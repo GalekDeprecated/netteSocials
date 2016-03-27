@@ -19,17 +19,20 @@
 
 namespace Galek\Socials\Facebook;
 
+use Nette\Application\UI\Control;
+
 /**
  * Description of Facebook
  *
  * @author Jan
  */
-class Facebook{
+class Facebook extends Control{
     
     /** @var string Facebook API key */
     private $api;
     
     public function __construct($api) {
+        parent::__construct($parent=NULL, $name=NULL);
         $this->api = $api;
     }
     
