@@ -7,6 +7,11 @@
             "email": "admin@gcore.cz"
         }
     ],
+    "autoload": {
+        "psr-0": {
+            "Galek\\Socials\\": "src/"
+        }
+    },
     "require": {
         "nette/nette": "^2.3"
     }
