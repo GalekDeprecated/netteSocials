@@ -8,10 +8,6 @@
         }
     ],
     "require": {
-        "nette/nette": "~2.0"
-    },
-    "minimum-stability": "dev",
-    "require-dev": {
-        "nette/tester": "~1.0"
+        "nette/nette": "^2.3"
     }
 }
