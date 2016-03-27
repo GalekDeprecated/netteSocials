@@ -31,8 +31,8 @@ class Facebook extends Control{
     /** @var string Facebook API key */
     private $api;
     
-    public function __construct(\Nette\ComponentModel\IContainer $parent = NULL, $name = NULL,$api) {
-        parent::__construct($parent, $name);
+    public function __construct($api) {
+        parent::__construct();
         $this->api = $api;
     }
     
