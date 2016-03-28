@@ -16,12 +16,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+namespace Galek\Socials\Facebook;
 /**
  * Description of Social
  *
  * @author Jan
  */
 class Social {
-    //put your code here
+    const CZ = 'cs_CZ',
+	US = 'en_US',
+	SK = 'sk_SK';
 }
