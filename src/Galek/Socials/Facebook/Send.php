@@ -22,7 +22,7 @@ namespace Galek\Socials\Facebook;
  *
  * @author Jan Galek
  */
-final class Like extends Facebook{
+final class Send extends Facebook{
     const LAYOUT_STANDARD = 'standard',
           LAYOUT_BOX_COUNT = 'box_count',
           LAYOUT_BUTTON_COUNT = 'BUTTON_COUNT',
@@ -37,33 +37,18 @@ final class Like extends Facebook{
     const KID_DIRECTED_YES = true,
 	KID_DIRECTED_NO = false;
     
-    /** @var string|const The color scheme used by the plugin. Can be "light" or "dark". */
+    /** @var string|const Scheme color light|dark */
     public $scheme = 'light';
     /** @var boolean If your web site or online service, or a portion of your service, is directed to children under 13 you must enable this */
     public $kid_directed = false;
-    /** @var boolean Show Friend's faces */
-    public $show_faces = true;
-    /** @var boolean Include Share Button */
-    public $share = false;
-    /** @var integer Width Button */ 
-    public $width = NULL;
-    /** @var string|const Layout Type */
-    public $layout = 'standard';
-    /** @var string|const Type button */
-    public $type = 'like';
 
 
     public function render(){
         $template = $this->template;
-        $template->faces = (string)$this->show_faces;
-        $template->share = (string)$this->share;
         $template->scheme = $this->scheme;
         $template->kid_directed = $this->kid_directed;
-        $template->width = $this->width;
-        $template->layout = $this->layout;
-        $template->type = $this->type;
         $template->link = $this->link;
         
-        $template->render(__DIR__ .'/like.latte');
+        $template->render(__DIR__ .'/send.latte');
     }
 }

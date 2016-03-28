@@ -22,7 +22,7 @@ namespace Galek\Socials\Facebook;
  *
  * @author Jan Galek
  */
-final class Like extends Facebook{
+final class Comments extends Facebook{
     const LAYOUT_STANDARD = 'standard',
           LAYOUT_BOX_COUNT = 'box_count',
           LAYOUT_BUTTON_COUNT = 'BUTTON_COUNT',
@@ -34,36 +34,31 @@ final class Like extends Facebook{
     const SCHEME_DARK = 'dark',
 	SCHEME_LIGHT = 'light';
     
-    const KID_DIRECTED_YES = true,
-	KID_DIRECTED_NO = false;
+    const ORDER_SOCIAL = 'social',
+          ORDER_REVERSE_TIME = 'reverse_time',
+          ORDER_TIME = 'time';
     
     /** @var string|const The color scheme used by the plugin. Can be "light" or "dark". */
     public $scheme = 'light';
-    /** @var boolean If your web site or online service, or a portion of your service, is directed to children under 13 you must enable this */
-    public $kid_directed = false;
-    /** @var boolean Show Friend's faces */
-    public $show_faces = true;
-    /** @var boolean Include Share Button */
-    public $share = false;
-    /** @var integer Width Button */ 
-    public $width = NULL;
-    /** @var string|const Layout Type */
-    public $layout = 'standard';
-    /** @var string|const Type button */
-    public $type = 'like';
-
+    /** @var boolean A boolean value that specifies whether to show the mobile-optimized version or not.*/
+    public $mobile = NULL;
+    /** @var integer The number of comments to show by default. The minimum value is 1.*/
+    public $count = 10;
+    /** @var string The order to use when displaying comments. Can be "social", "reverse_time", or "time".*/
+    public $order = 'social';
+    /** @var integer The width of the plugin. Either a pixel value or the literal 100% for fluid width. The mobile version of the Comments plugin ignores the width parameter, and instead has a fluid width of 100%. The minimum width supported by the comments plugin is 320px. */
+    public $width = 550;
 
     public function render(){
         $template = $this->template;
-        $template->faces = (string)$this->show_faces;
-        $template->share = (string)$this->share;
         $template->scheme = $this->scheme;
         $template->kid_directed = $this->kid_directed;
+        $template->mobile = $this->mobile;
+        $template->count = $this->count;
+        $template->order = $this->order;
         $template->width = $this->width;
-        $template->layout = $this->layout;
-        $template->type = $this->type;
         $template->link = $this->link;
         
-        $template->render(__DIR__ .'/like.latte');
+        $template->render(__DIR__ .'/comments.latte');
     }
 }

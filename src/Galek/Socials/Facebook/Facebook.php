@@ -28,6 +28,7 @@ use Nette\Application\UI\Control;
  * 
  * @method Facebook setApiKey(string $apiKey) Set api key
  * @method Facebook setLang(string $lang) set ISO code lang https://www.facebook.com/translations/FacebookLocales.xml
+ * @method Facebook setPageLink(string $pageLink) Set Url to Facebook page
  */
 class Facebook extends Control{
     
@@ -41,6 +42,8 @@ class Facebook extends Control{
     public $lang;
     /** @var string Link to action */
     public $link = 'this';
+    /** @var string Url to Facebook page */
+    public $pageLink = 'https://www.facebook.com/Jan.Galek.Tvorba.Webu';
 
     public function __construct($apiKey,$lang='cs_CZ') {
         $this->apiKey = $apiKey;

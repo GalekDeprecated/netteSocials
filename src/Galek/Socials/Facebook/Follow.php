@@ -22,15 +22,12 @@ namespace Galek\Socials\Facebook;
  *
  * @author Jan Galek
  */
-final class Like extends Facebook{
+final class Follow extends Facebook{
     const LAYOUT_STANDARD = 'standard',
           LAYOUT_BOX_COUNT = 'box_count',
           LAYOUT_BUTTON_COUNT = 'BUTTON_COUNT',
           LAYOUT_BUTTON = 'button';
-    
-    const TYPE_LIKE = 'like',
-	TYPE_RECOMMEND = 'recommend';
-    
+
     const SCHEME_DARK = 'dark',
 	SCHEME_LIGHT = 'light';
     
@@ -40,30 +37,25 @@ final class Like extends Facebook{
     /** @var string|const The color scheme used by the plugin. Can be "light" or "dark". */
     public $scheme = 'light';
     /** @var boolean If your web site or online service, or a portion of your service, is directed to children under 13 you must enable this */
-    public $kid_directed = false;
-    /** @var boolean Show Friend's faces */
+    public $kid_directed = false;    
+    /** @var boolean Specifies whether to display profile photos below the button (standard layout only).s */
     public $show_faces = true;
-    /** @var boolean Include Share Button */
-    public $share = false;
-    /** @var integer Width Button */ 
-    public $width = NULL;
     /** @var string|const Layout Type */
     public $layout = 'standard';
-    /** @var string|const Type button */
-    public $type = 'like';
-
+    
+    public $width = NULL;
+    public $height = NULL;
 
     public function render(){
         $template = $this->template;
-        $template->faces = (string)$this->show_faces;
-        $template->share = (string)$this->share;
         $template->scheme = $this->scheme;
         $template->kid_directed = $this->kid_directed;
+        $template->faces = (string)$this->show_faces;
         $template->width = $this->width;
+        $template->height = $this->height;
         $template->layout = $this->layout;
-        $template->type = $this->type;
         $template->link = $this->link;
         
-        $template->render(__DIR__ .'/like.latte');
+        $template->render(__DIR__ .'/follow.latte');
     }
 }
