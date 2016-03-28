@@ -60,7 +60,6 @@ final class PagePlugin extends Facebook{
     public function render(){
         $template = $this->template;
         $template->faces = (string)$this->show_faces;
-        $template->share = (string)$this->share;
         $template->width = $this->width;
         $template->height = $this->height;
         $template->tabs = $this->tabs;
