@@ -67,7 +67,7 @@ final class PagePlugin extends Facebook{
         $template->cta = (string)$this->cta;
         $template->small_header = (string)$this->small_header;
         $template->adapt_width = (string)$this->adapt_width;
-        $template->link = $this->link;
+        $template->link = $this->pageLink;
         
         $template->render(__DIR__ .'/page.latte');
     }
