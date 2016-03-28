@@ -41,7 +41,7 @@ class Facebook extends Control{
     /** @var string ISO code of lang */
     public $lang;
     /** @var string Link to action */
-    public $link = 'this';
+    public $link = '//this';
     /** @var string Url to Facebook page */
     public $pageLink = 'https://www.facebook.com/Jan.Galek.Tvorba.Webu';
 
