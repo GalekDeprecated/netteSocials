@@ -54,7 +54,7 @@ final class Follow extends Facebook{
         $template->width = $this->width;
         $template->height = $this->height;
         $template->layout = $this->layout;
-        $template->link = $this->link;
+        $template->link = $this->pageLink;
         
         $template->render(__DIR__ .'/follow.latte');
     }
