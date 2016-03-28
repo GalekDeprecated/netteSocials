@@ -35,7 +35,40 @@ class Facebook extends Control{
     const LANG_CZ = 'cs_CZ',
 	LANG_US = 'en_US',
 	LANG_SK = 'sk_SK';
-
+    
+    const LAYOUT_BOX_COUNT = 'box_count',
+          LAYOUT_BUTTON_COUNT = 'button_count',
+	LAYOUT_STANDARD = 'standard',
+	LAYOUT_BUTTON = 'button',
+	LAYOUT_ICON_LINK = 'icon_link',
+	LAYOUT_ICON = 'icon',
+	LAYOUT_LINK = 'link';
+    
+    const LIKE_TYPE_LIKE = 'like',
+	LIKE_TYPE_RECOMMEND = 'recommend';
+    
+    const KID_DIRECTED_YES = true,
+	KID_DIRECTED_NO = false;
+    
+    const LAYOUT_STANDARD = 'standard',
+          LAYOUT_BOX_COUNT = 'box_count',
+          LAYOUT_BUTTON_COUNT = 'BUTTON_COUNT',
+          LAYOUT_BUTTON = 'button';
+    const SCHEME_DARK = 'dark',
+	SCHEME_LIGHT = 'light';
+        
+    const ORDER_SOCIAL = 'social',
+          ORDER_REVERSE_TIME = 'reverse_time',
+          ORDER_TIME = 'time';
+    
+    const TAB_TIMELINE = 'timeline',
+	TAB_EVENTS = 'events',
+	TAB_MESSAGES = 'messages',
+	TAB_TIMELINE_AND_EVENTS = 'timeline,events',
+	TAB_TIMELINE_AND_MESSAGES = 'timeline,messages',
+	TAB_EVENTS_AND_MESSAGES = 'events,messages',
+	TAB_ALL = 'timeline,events,messages';
+    
     /** @var string Facebook API key */
     public $apiKey;
     /** @var string ISO code of lang */

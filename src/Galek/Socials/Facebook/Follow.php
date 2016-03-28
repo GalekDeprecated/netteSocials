@@ -23,16 +23,6 @@ namespace Galek\Socials\Facebook;
  * @author Jan Galek
  */
 final class Follow extends Facebook{
-    const LAYOUT_STANDARD = 'standard',
-          LAYOUT_BOX_COUNT = 'box_count',
-          LAYOUT_BUTTON_COUNT = 'BUTTON_COUNT',
-          LAYOUT_BUTTON = 'button';
-
-    const SCHEME_DARK = 'dark',
-	SCHEME_LIGHT = 'light';
-    
-    const KID_DIRECTED_YES = true,
-	KID_DIRECTED_NO = false;
     
     /** @var string|const The color scheme used by the plugin. Can be "light" or "dark". */
     public $scheme = 'light';

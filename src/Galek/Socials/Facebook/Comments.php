@@ -23,20 +23,6 @@ namespace Galek\Socials\Facebook;
  * @author Jan Galek
  */
 final class Comments extends Facebook{
-    const LAYOUT_STANDARD = 'standard',
-          LAYOUT_BOX_COUNT = 'box_count',
-          LAYOUT_BUTTON_COUNT = 'BUTTON_COUNT',
-          LAYOUT_BUTTON = 'button';
-    
-    const TYPE_LIKE = 'like',
-	TYPE_RECOMMEND = 'recommend';
-    
-    const SCHEME_DARK = 'dark',
-	SCHEME_LIGHT = 'light';
-    
-    const ORDER_SOCIAL = 'social',
-          ORDER_REVERSE_TIME = 'reverse_time',
-          ORDER_TIME = 'time';
     
     /** @var string|const The color scheme used by the plugin. Can be "light" or "dark". */
     public $scheme = 'light';

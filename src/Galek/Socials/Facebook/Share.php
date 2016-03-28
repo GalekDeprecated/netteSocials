@@ -24,12 +24,6 @@ namespace Galek\Socials\Facebook;
  * 
  */
 class Share extends Facebook{
-    const LAYOUT_BOX_COUNT = 'box_count',
-      LAYOUT_BUTTON_COUNT = 'button_count',
-      LAYOUT_BUTTON = 'button',
-      LAYOUT_ICON_LINK = 'icon_link',
-      LAYOUT_ICON = 'icon',
-      LAYOUT_LINK = 'link';
     
     /** @var string|const Layout */
     public $layout = 'box_count';

@@ -23,19 +23,6 @@ namespace Galek\Socials\Facebook;
  * @author Jan Galek
  */
 final class Send extends Facebook{
-    const LAYOUT_STANDARD = 'standard',
-          LAYOUT_BOX_COUNT = 'box_count',
-          LAYOUT_BUTTON_COUNT = 'BUTTON_COUNT',
-          LAYOUT_BUTTON = 'button';
-    
-    const TYPE_LIKE = 'like',
-	TYPE_RECOMMEND = 'recommend';
-    
-    const SCHEME_DARK = 'dark',
-	SCHEME_LIGHT = 'light';
-    
-    const KID_DIRECTED_YES = true,
-	KID_DIRECTED_NO = false;
     
     /** @var string|const Scheme color light|dark */
     public $scheme = 'light';

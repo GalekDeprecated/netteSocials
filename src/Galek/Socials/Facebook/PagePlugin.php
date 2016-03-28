@@ -23,23 +23,7 @@ namespace Galek\Socials\Facebook;
  * @author Jan Galek
  */
 final class PagePlugin extends Facebook{
-    const LAYOUT_STANDARD = 'standard',
-          LAYOUT_BOX_COUNT = 'box_count',
-          LAYOUT_BUTTON_COUNT = 'BUTTON_COUNT',
-          LAYOUT_BUTTON = 'button';
     
-    const TYPE_LIKE = 'like',
-	TYPE_RECOMMEND = 'recommend';
-    
-    const TAB_TIMELINE = 'timeline',
-	TAB_EVENTS = 'events',
-	TAB_MESSAGES = 'messages',
-	TAB_TIMELINE_AND_EVENTS = 'timeline,events',
-	TAB_TIMELINE_AND_MESSAGES = 'timeline,messages',
-	TAB_EVENTS_AND_MESSAGES = 'events,messages',
-	TAB_ALL = 'timeline,events,messages';
-    
-
     /** @var integer Width Button */ 
     public $width = 340;
     /** @var integer Height Button */ 
