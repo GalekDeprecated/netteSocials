@@ -56,7 +56,7 @@ final class Comments extends Facebook{
         $template->count = $this->count;
         $template->order = $this->order;
         $template->width = $this->width;
-        $template->link = $_SERVER['SERVER_NAME'].$this->link;
+        $template->link = $this->link;
         
         $template->render(__DIR__ .'/comments.latte');
     }
