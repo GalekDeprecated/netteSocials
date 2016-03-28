@@ -29,25 +29,40 @@ use Nette\Application\UI\Control;
  * @method Facebook setApiKey(string $apiKey) Set api key
  * @method Facebook setLang(string $lang) set ISO code lang https://www.facebook.com/translations/FacebookLocales.xml
  */
-abstract class Facebook extends Control{
+class Facebook extends Control{
     
     const LANG_CZ = 'cs_CZ',
 	LANG_US = 'en_US',
 	LANG_SK = 'sk_SK';
 
     /** @var string Facebook API key */
-    private $apiKey;
+    public $apiKey;
     /** @var string ISO code of lang */
-    private $lang;
+    public $lang;
     /** @var string Link to action */
     public $link = 'this';
-    
+
     public function __construct($apiKey,$lang='cs_CZ') {
-        parent::__construct($parent=NULL, $name=NULL);
         $this->apiKey = $apiKey;
         $this->lang = $lang;
     }
     
+    /**
+     * Set type Share
+     * @return \Galek\Socials\Facebook\Share
+     */
+    public function useShare(){
+        return new Share($this->apiKey,  $this->lang);
+    }
+    
+    /**
+     * Set type Like
+     * @return \Galek\Socials\Facebook\Like
+     */
+    public function useLike(){
+        return new Like($this->apiKey,  $this->lang);
+    }
+
     public function render(){
         $template = $this->template;
         
@@ -58,9 +73,7 @@ abstract class Facebook extends Control{
         $template = $this->template;
         $template->apiKey = $this->apiKey;
         $template->lang = $this->lang;
-        
         $template->render(__DIR__ .'/js.latte');
     }
-    
     
 }

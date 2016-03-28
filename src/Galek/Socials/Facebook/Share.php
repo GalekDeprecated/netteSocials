@@ -21,8 +21,9 @@ namespace Galek\Socials\Facebook;
  * Description of Share
  *
  * @author Jan Galek
+ * 
  */
-final class Share extends Facebook{
+class Share extends Facebook{
     const LAYOUT_BOX_COUNT = 'box_count',
       LAYOUT_BUTTON_COUNT = 'button_count',
       LAYOUT_BUTTON = 'button',
@@ -32,9 +33,8 @@ final class Share extends Facebook{
     
     /** @var string|const Layout */
     public $layout = 'box_count';
-
-
-public function render(){
+    
+    public function render(){
         $template = $this->template;
         $template->layout = $this->layout;
         $template->link = $this->link;

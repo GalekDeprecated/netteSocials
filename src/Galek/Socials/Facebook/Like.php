@@ -34,7 +34,7 @@ final class Like extends Facebook{
     /** @var boolean Show Friend's faces */
     public $show_faces = true;
     /** @var boolean Include Share Button */
-    public $share = true;
+    public $share = false;
     /** @var integer Width Button */ 
     public $width = NULL;
     /** @var string|const Layout Type */
