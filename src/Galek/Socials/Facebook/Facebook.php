@@ -65,6 +65,38 @@ class Facebook extends Control{
     public function useLike(){
         return new Like($this->apiKey,  $this->lang);
     }
+    
+    /**
+     * Set type Like
+     * @return \Galek\Socials\Facebook\Like
+     */
+    public function useComments(){
+        return new Comments($this->apiKey,  $this->lang);
+    }
+    
+    /**
+     * Set type Like
+     * @return \Galek\Socials\Facebook\Like
+     */
+    public function useFollow(){
+        return new Follow($this->apiKey,  $this->lang);
+    }
+    
+    /**
+     * Set type Like
+     * @return \Galek\Socials\Facebook\Like
+     */
+    public function usePage(){
+        return new PagePlugin($this->apiKey,  $this->lang);
+    }
+    
+    /**
+     * Set type Like
+     * @return \Galek\Socials\Facebook\Like
+     */
+    public function useSend(){
+        return new Send($this->apiKey,  $this->lang);
+    }
 
     public function render(){
         $template = $this->template;
