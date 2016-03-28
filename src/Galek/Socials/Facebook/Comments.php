@@ -52,7 +52,6 @@ final class Comments extends Facebook{
     public function render(){
         $template = $this->template;
         $template->scheme = $this->scheme;
-        $template->kid_directed = $this->kid_directed;
         $template->mobile = $this->mobile;
         $template->count = $this->count;
         $template->order = $this->order;
