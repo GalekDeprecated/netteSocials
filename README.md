@@ -11,7 +11,7 @@ Plugin for Nette framework
 * Page Plugin
 
 ##Comming soon
-* Google
+* Google (working)
 * Twitter
 * if you want next, you can contact me ;)
 
