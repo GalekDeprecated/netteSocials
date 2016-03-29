@@ -18,7 +18,7 @@ Plugin for Nette framework
 Package Installation
 -------------------
 
-The best way to install Social Plugins is using [Composer](http://getcomposer.org/):
+The best way to install Nette Socials is using [Composer](http://getcomposer.org/):
 
 ```sh
 $ composer require galek/nette-socials
