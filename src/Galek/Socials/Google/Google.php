@@ -32,50 +32,37 @@ use Nette\Application\UI\Control;
  */
 class Google extends Control{
     
-    const LANG_CZ = 'cs_CZ',
-	LANG_US = 'en_US',
-	LANG_SK = 'sk_SK';
+    const LANG_CZ = 'cs',
+	LANG_US = 'en-US',
+	LANG_UK = 'en-GB',
+	LANG_SK = 'sk';
     
-    const LAYOUT_BOX_COUNT = 'box_count',
-          LAYOUT_BUTTON_COUNT = 'button_count',
-	LAYOUT_STANDARD = 'standard',
-	LAYOUT_BUTTON = 'button',
-	LAYOUT_ICON_LINK = 'icon_link',
-	LAYOUT_ICON = 'icon',
-	LAYOUT_LINK = 'link';
+    const LAYOUT_LINE = 'inline',
+          LAYOUT_BUBLE = NULL,
+	LAYOUT_NONE = 'none';
     
-    const LIKE_TYPE_LIKE = 'like',
-	LIKE_TYPE_RECOMMEND = 'recommend';
+    const SIZE_SMALL = 'small',
+	SIZE_MEDIUM = 'medium',
+	SIZE_STANDARD = NULL,
+	SIZE_TALL = 'tall';
     
-    const KID_DIRECTED_YES = true,
-	KID_DIRECTED_NO = false;
+    const PARSE_EXPLICIT = 'explicit',
+          PARSE_ONLOAD = 'onload';
     
-    const SCHEME_DARK = 'dark',
-	SCHEME_LIGHT = 'light';
-        
-    const ORDER_SOCIAL = 'social',
-          ORDER_REVERSE_TIME = 'reverse_time',
-          ORDER_TIME = 'time';
-    
-    const TAB_TIMELINE = 'timeline',
-	TAB_EVENTS = 'events',
-	TAB_MESSAGES = 'messages',
-	TAB_TIMELINE_AND_EVENTS = 'timeline,events',
-	TAB_TIMELINE_AND_MESSAGES = 'timeline,messages',
-	TAB_EVENTS_AND_MESSAGES = 'events,messages',
-	TAB_ALL = 'timeline,events,messages';
-    
-    /** @var string Facebook API key */
-    public $apiKey;
-    /** @var string ISO code of lang */
+    const ALIGN_LEFT = 'left',
+	ALIGN_RIGHT = 'right';
+
+
+  /** @var string ISO code of lang */
     public $lang;
-    /** @var string Link to action */
-    public $link = '//this';
     /** @var string Url to Facebook page */
     public $pageLink = 'https://www.facebook.com/Jan.Galek.Tvorba.Webu';
-
-    public function __construct($apiKey,$lang='cs_CZ') {
-        $this->apiKey = $apiKey;
+    /** @var string Sets the loading mechanism to use. */
+    public $parse = 'onload';
+    /** @var string Link to action */
+    public $link = '//this';
+    
+    public function __construct($lang='cs') {
         $this->lang = $lang;
     }
     
@@ -84,15 +71,15 @@ class Google extends Control{
      * @return \Galek\Socials\Facebook\Share
      */
     public function useShare(){
-        return new Share($this->apiKey,  $this->lang);
+        return new Share($this->lang);
     }
     
     /**
-     * Set type Like
-     * @return \Galek\Socials\Facebook\Like
+     * Set type Plus
+     * @return \Galek\Socials\Google\Plus
      */
-    public function useLike(){
-        return new Like($this->apiKey,  $this->lang);
+    public function usePlus(){
+        return new Plus($this->lang);
     }
     
     /**
@@ -100,7 +87,7 @@ class Google extends Control{
      * @return \Galek\Socials\Facebook\Like
      */
     public function useComments(){
-        return new Comments($this->apiKey,  $this->lang);
+        return new Comments($this->lang);
     }
     
     /**
@@ -108,7 +95,7 @@ class Google extends Control{
      * @return \Galek\Socials\Facebook\Like
      */
     public function useFollow(){
-        return new Follow($this->apiKey,  $this->lang);
+        return new Follow($this->lang);
     }
     
     /**
@@ -116,7 +103,7 @@ class Google extends Control{
      * @return \Galek\Socials\Facebook\Like
      */
     public function usePage(){
-        return new PagePlugin($this->apiKey,  $this->lang);
+        return new PagePlugin($this->lang);
     }
     
     /**
@@ -124,7 +111,7 @@ class Google extends Control{
      * @return \Galek\Socials\Facebook\Like
      */
     public function useSend(){
-        return new Send($this->apiKey,  $this->lang);
+        return new Send($this->lang);
     }
 
     public function render(){
@@ -135,8 +122,8 @@ class Google extends Control{
 
     public function renderJs(){
         $template = $this->template;
-        $template->apiKey = $this->apiKey;
         $template->lang = $this->lang;
+        $template->parse = $this->parse;
         $template->render(__DIR__ .'/js.latte');
     }
     

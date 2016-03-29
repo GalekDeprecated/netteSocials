@@ -24,33 +24,29 @@ namespace Galek\Socials\Google;
  */
 final class Plus extends Google{
     
-    /** @var string|const The color scheme used by the plugin. Can be "light" or "dark". */
-    public $scheme = 'light';
-    /** @var boolean If your web site or online service, or a portion of your service, is directed to children under 13 you must enable this */
-    public $kid_directed = false;
-    /** @var boolean Show Friend's faces */
-    public $show_faces = true;
-    /** @var boolean Include Share Button */
-    public $share = false;
+    /** @var string|const Size of Button */
+    public $size = NULL;
     /** @var integer Width Button */ 
-    public $width = NULL;
+    public $width = 300;
     /** @var string|const Layout Type */
-    public $layout = 'standard';
-    /** @var string|const Type button */
-    public $type = 'like';
+    public $layout = 'inline';
+    /** @var string|const Sets the horizontal alignment of the button assets within its frame. */
+    public $align = 'left';
+   /** @var boolean To disable showing recommendations within the +1 hover bubble, set data-recommendations to false.  */
+    public $recommendations = true;
+    /** @var boolean Deprecated: To disable the count display, use data-annotation="none". */
+    public $count = true;
 
 
     public function render(){
         $template = $this->template;
-        $template->faces = (string)$this->show_faces;
-        $template->share = (string)$this->share;
-        $template->scheme = $this->scheme;
-        $template->kid_directed = $this->kid_directed;
         $template->width = $this->width;
         $template->layout = $this->layout;
-        $template->type = $this->type;
+        $template->size = $this->size;
         $template->link = $this->link;
-        
+        $template->align = $this->align;
+        $template->recommendations = $this->recommendations;
+        $template->count = $this->count;
         $template->render(__DIR__ .'/plus.latte');
     }
 }

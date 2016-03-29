@@ -18,6 +18,9 @@ use Galek\Socials\Facebook\Facebook;
 
 abstract class BasePresenter{
 
+    /** @var Facebook @inject */
+    public $facebook;
+
   public function createComponentFacebook(){
       $control = $this->facebook;
       return $control;
