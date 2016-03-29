@@ -21,6 +21,11 @@ namespace Galek\Socials\Facebook;
  * Description of Share
  *
  * @author Jan Galek
+ * @method Comments setScheme(string $scheme) The color scheme used by the plugin. Can be "light" or "dark".
+ * @method Comments setMobile(boolean $mobile) A boolean value that specifies whether to show the mobile-optimized version or not.
+ * @method Comments setCount(integer $count) The number of comments to show by default. The minimum value is 1.
+ * @method Comments setOrder(string $order) The order to use when displaying comments. Can be "social", "reverse_time", or "time".
+ * @method Comments setWidth(integer $width) The width of the plugin. Either a pixel value or the literal 100% for fluid width. The mobile version of the Comments plugin ignores the width parameter, and instead has a fluid width of 100%. The minimum width supported by the comments plugin is 320px.
  */
 final class Comments extends Facebook{
     

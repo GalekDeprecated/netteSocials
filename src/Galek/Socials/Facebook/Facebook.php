@@ -29,6 +29,7 @@ use Nette\Application\UI\Control;
  * @method Facebook setApiKey(string $apiKey) Set api key
  * @method Facebook setLang(string $lang) set ISO code lang https://www.facebook.com/translations/FacebookLocales.xml
  * @method Facebook setPageLink(string $pageLink) Set Url to Facebook page
+ * @method Facebook setLink(string $link) Link to action
  */
 class Facebook extends Control{
     

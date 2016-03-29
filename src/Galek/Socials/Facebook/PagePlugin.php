@@ -21,6 +21,14 @@ namespace Galek\Socials\Facebook;
  * Description of Share
  *
  * @author Jan Galek
+ * @method PagePlugin setWidth(integer $width) Width Button
+ * @method PagePlugin setHeight(integer $height) Height Button
+ * @method PagePlugin setTabs(string $tabs) Tabs to render i.e. timeline, events, messages. Use a comma-separated list to add multiple tabs, i.e. timeline, events.
+ * @method PagePlugin setHideCover(boolean $hide_cover) Hide cover photo in the header
+ * @method PagePlugin setShowFaces(boolean $show_faces) Show profile photos when friends like this
+ * @method PagePlugin setCta(boolean $cta) Hide the custom call to action button (if available)
+ * @method PagePlugin setSmallHeader(boolean $small_header) Use the small header instead
+ * @method PagePlugin setAdaptWidth(boolean $adapt_width) Try to fit inside the container width
  */
 final class PagePlugin extends Facebook{
     

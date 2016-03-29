@@ -21,6 +21,13 @@ namespace Galek\Socials\Facebook;
  * Description of Share
  *
  * @author Jan Galek
+ * @method Like setScheme(string $scheme) The color scheme used by the plugin. Can be "light" or "dark".
+ * @method Like setKidDirected(boolean $kid_directed) If your web site or online service, or a portion of your service, is directed to children under 13 you must enable this 
+ * @method Like setShowFaces(boolean $show_faces) Show profile photos when friends like this
+ * @method Like setShare(boolean $share) Show Friend's faces
+ * @method Like setWidth(integer $width) Width Button
+ * @method Like setType(string $type) Type button
+ * @method Like setLayout(string layout) Layout
  */
 final class Like extends Facebook{
     

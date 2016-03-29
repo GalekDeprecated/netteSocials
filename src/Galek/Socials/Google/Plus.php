@@ -21,6 +21,12 @@ namespace Galek\Socials\Google;
  * Description of Share
  *
  * @author Jan Galek
+ * @method Plus setSize(string $size) Size of Button
+ * @method Plus setWidth(integer $width) Width Button
+ * @method Plus setLayout(string $layout) Layout type
+ * @method Plus setAlign(string $align) Sets the horizontal alignment of the button assets within its frame.
+ * @method Plus setRecommendations(boolean $recommendations) To disable showing recommendations within the +1 hover bubble, set data-recommendations to false.
+ * @method Plus setCount(boolean $count) Deprecated: To disable the count display, use data-annotation="none".
  */
 final class Plus extends Google{
     

@@ -26,9 +26,10 @@ use Nette\Application\UI\Control;
  *
  * @author Jan Galek
  * 
- * @method Facebook setApiKey(string $apiKey) Set api key
- * @method Facebook setLang(string $lang) set ISO code lang https://www.facebook.com/translations/FacebookLocales.xml
- * @method Facebook setPageLink(string $pageLink) Set Url to Facebook page
+ * @method Google setLang(string $lang) set ISO code lang 
+ * @method Google setPageLink(string $pageLink) Set Url to Google page
+ * @method Google setParse(string $parse) Sets the loading mechanism to use
+ * @method Google setLink(string $link) Link to action
  */
 class Google extends Control{
     

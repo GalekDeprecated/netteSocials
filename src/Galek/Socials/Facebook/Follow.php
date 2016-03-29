@@ -21,6 +21,12 @@ namespace Galek\Socials\Facebook;
  * Description of Share
  *
  * @author Jan Galek
+ * @method Follow setScheme(string $scheme) The color scheme used by the plugin. Can be "light" or "dark".
+ * @method Follow setKidDirected(boolean $kid_directed) If your web site or online service, or a portion of your service, is directed to children under 13 you must enable this 
+ * @method Follow setShowFaces(boolean $show_faces) Show profile photos when friends like this
+ * @method Follow setWidth(integer $width) Width Button
+ * @method Follow setHeight(integer $height) Height Button
+ * @method Follow setLayout(string layout) Layout
  */
 final class Follow extends Facebook{
     

@@ -21,6 +21,7 @@ namespace Galek\Socials\Facebook;
  * Description of Share
  *
  * @author Jan Galek
+ * @method Share setLayout(string layout) Layout
  * 
  */
 class Share extends Facebook{
