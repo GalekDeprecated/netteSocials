@@ -2,15 +2,13 @@
 
 Plugin for Nette framework
 
-##Instalation
+##Instalation Facebook
 
-###Config
+More Informations in [CZ](/docs/facebook/cs.md),[EN](/docs/facebook/en.md)
+
+###Config Basic
 ```config
 services:
 	- Galek\Socials\Facebook\Facebook('123456789') //Api key
 ```
 
-```config
-services:
-	- Galek\Socials\Facebook\Facebook('123456789','cs_CZ') //Api key and set Lang
-```
