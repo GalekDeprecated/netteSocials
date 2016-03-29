@@ -14,6 +14,8 @@ services:
 
 ###Presenter
 ```php
+use Galek\Socials\Facebook\Facebook;
+
 abstract class BasePresenter{
 
   public function createComponentFacebook(){
