@@ -15,6 +15,25 @@ Plugin for Nette framework
 * Twitter
 * if you want next, you can contact me ;)
 
+Package Installation
+-------------------
+
+The best way to install Social Plugins is using [Composer](http://getcomposer.org/):
+
+```sh
+$ composer require galek/nette-socials
+```
+
+[Packagist - Versions](https://packagist.org/packages/galek/nette-socials)
+
+or manual edit composer.json in your project
+
+```json
+"require": {
+    "galek/nette-socials": "^1.0"
+}
+```
+
 ###Instalation Facebook
 
 More Informations in [CZ](/docs/facebook/cs.md),[EN](/docs/facebook/en.md)
