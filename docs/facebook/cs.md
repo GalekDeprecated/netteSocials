@@ -1,4 +1,18 @@
 Příklad použití:
+
+#Config
+```config
+services:
+	- Galek\Socials\Facebook\Facebook('123456789') //Api klíč
+```
+
+###Config Extends
+```config
+services:
+	- Galek\Socials\Facebook\Facebook('123456789','cs_CZ') //Api klíč a nastavení jazyka
+```
+
+###Presenter
 ```php
 abstract class BasePresenter{
 
@@ -34,10 +48,12 @@ abstract class BasePresenter{
       $control->kid_directed = false;
       $control->layout = Facebook::LAYOUT_BOX_COUNT;
       $control->scheme = Facebook::SCHEME_DARK;
+      $control->setPageLink('https://www.facebook.com/GCORE.cz');
       return $control;
   }
   public function createComponentFacebookPage(){
       $control = $this->facebook->usePage();
+      $control->setPageLink('https://www.facebook.com/GCORE.cz');
       $control->tabs = Facebook::TAB_ALL;
       return $control;
   }
@@ -45,14 +61,24 @@ abstract class BasePresenter{
 }
 ```
 
-#Config
-```config
-services:
-	- Galek\Socials\Facebook\Facebook('123456789') //Api key
-```
-
-###Config Extends
-```config
-services:
-	- Galek\Socials\Facebook\Facebook('123456789','cs_CZ') //Api key and set Lang
+###Template 
+```latte
+<html>
+<head>
+    <title>Example</title>
+</head>
+<body>
+    <aside>
+        {control facebookPage}
+    </aside>
+    <section class="share">
+        <span>{control facebookShare}</span>
+        <span>{control facebookLike}</span>
+        <span>{control facebookFollow}</span>
+        <span>{control facebookSend}</span>
+        <span>{control facebookComments}</span>
+    </section>
+    {control facebook:js}
+</body>
+</html>
 ```
