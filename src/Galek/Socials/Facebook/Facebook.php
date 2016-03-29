@@ -50,10 +50,6 @@ class Facebook extends Control{
     const KID_DIRECTED_YES = true,
 	KID_DIRECTED_NO = false;
     
-    const LAYOUT_STANDARD = 'standard',
-          LAYOUT_BOX_COUNT = 'box_count',
-          LAYOUT_BUTTON_COUNT = 'BUTTON_COUNT',
-          LAYOUT_BUTTON = 'button';
     const SCHEME_DARK = 'dark',
 	SCHEME_LIGHT = 'light';
         
