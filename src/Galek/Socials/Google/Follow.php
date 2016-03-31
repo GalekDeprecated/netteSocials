@@ -21,28 +21,19 @@ namespace Galek\Socials\Google;
  * Description of Share
  *
  * @author Jan Galek
+ * @method Follow setSize(string $size) Size of Button (height)
+ * @method Follow setLayout(string $layout) Layout type
  */
 final class Follow extends Google{
     
-    /** @var string|const The color scheme used by the plugin. Can be "light" or "dark". */
-    public $scheme = 'light';
-    /** @var boolean If your web site or online service, or a portion of your service, is directed to children under 13 you must enable this */
-    public $kid_directed = false;    
-    /** @var boolean Specifies whether to display profile photos below the button (standard layout only).s */
-    public $show_faces = true;
     /** @var string|const Layout Type */
-    public $layout = 'standard';
-    
-    public $width = NULL;
-    public $height = NULL;
+    public $layout = NULL;
+    /** @var string|const Size of Button */
+    public $size = NULL;
 
     public function render(){
         $template = $this->template;
-        $template->scheme = $this->scheme;
-        $template->kid_directed = $this->kid_directed;
-        $template->faces = (string)$this->show_faces;
-        $template->width = $this->width;
-        $template->height = $this->height;
+        $template->size = $this->size;
         $template->layout = $this->layout;
         $template->link = $this->pageLink;
         

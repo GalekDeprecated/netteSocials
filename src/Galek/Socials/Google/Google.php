@@ -39,7 +39,8 @@ class Google extends Control{
 	LANG_SK = 'sk';
     
     const LAYOUT_LINE = 'inline',
-          LAYOUT_BUBLE = NULL,
+          LAYOUT_BUBBLE = NULL,
+	LAYOUT_BUBBLE_VERTICAL = 'vertical-bubble',
 	LAYOUT_NONE = 'none';
     
     const SIZE_SMALL = 'small',
@@ -52,6 +53,9 @@ class Google extends Control{
     
     const ALIGN_LEFT = 'left',
 	ALIGN_RIGHT = 'right';
+    
+    const BADGE_TYPE_ICON = FALSE,
+	BADGE_TYPE_BADGE = TRUE;
 
 
   /** @var string ISO code of lang */

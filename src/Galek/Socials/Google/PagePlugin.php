@@ -21,38 +21,62 @@ namespace Galek\Socials\Google;
  * Description of Share
  *
  * @author Jan Galek
+ * @method PagePlugin setSize(integer $size) Size of Button [16,32,64]
+ * @method PagePlugin setTypeBadge(string $size) Type of Badge [person,page,community]
+ * @method PagePlugin setType(boolean $type) True = Badge, False = Icon
+ * @method PagePlugin setName(string $name) Custon name for Badge Icon
+ * @method PagePlugin setScheme(string $scheme) The color scheme used by the plugin. Can be "light" or "dark". 
+ * @method PagePlugin setWidth(int $width) Width Badge
+ * @method PagePlugin setTagLine(boolean $tagline) Displays the user's tag line if set to true.
+ * @method PagePlugin setCoverPhoto(boolean $coverphoto) Displays the cover photo in the badge if set to true and the photo exists.
  */
 final class PagePlugin extends Google{
     
-    /** @var integer Width Button */ 
-    public $width = 340;
-    /** @var integer Height Button */ 
-    public $height = 500;
-    /** @var string Tabs to render i.e. timeline, events, messages. Use a comma-separated list to add multiple tabs, i.e. timeline, events. */
-    public $tabs = 'timeline';
-    /** @var boolean Hide cover photo in the header */
-    public $hide_cover = false;
-    /** @var boolean Show profile photos when friends like this */
-    public $show_faces = true;
-    /** @var boolean Hide the custom call to action button (if available) */
-    public $cta = false;
-    /** @var boolean Use the small header instead */
-    public $small_header = false;
-    /** @var boolean Try to fit inside the container width */
-    public $adapt_width = true;
+    const PAGEPLUGIN_SIZE_SMALL = 16,
+	PAGEPLUGIN_SIZE_MEDIUM = 32,
+	PAGEPLUGIN_SIZE_BIG = 64;
+    
+    const PAGE_TYPE_PERSON = 'person',
+	PAGE_TYPE_PAGE = 'page',
+	PAGE_TYPE_COMMUNITY = 'comunnity';
+    
+    
+    const LAYOUT_VERTICAL = 'portrait',
+          LAYOUT_HORIZONTAL = 'landscape';
+
+    const SCHEME_DARK = 'dark',
+	SCHEME_LIGHT = 'light';
+    /** @var integer Size of Button [16,32,64] */
+    public $size = 32;
+    /** @var integer Width Badge */ 
+    public $width = 300;
+    /** @var string|const The color scheme used by the plugin. Can be "light" or "dark". */
+    public $scheme = 'light';
+    /** @var string Custon name for Badge Icon */
+    public $name = NULL;
+    /** @var boolean True = Badge, False = Icon */
+    public $type = TRUE;
+    /** @var string|const [person,page,community] */
+    public $badgeType = TRUE;
+    /** @var boolean Displays the user's tag line if set to true.*/
+    public $tagline = true;
+    /** @var boolean Displays the cover photo in the badge if set to true and the photo exists.*/
+    public $coverphoto = true;
 
     public function render(){
         $template = $this->template;
-        $template->faces = (string)$this->show_faces;
         $template->width = $this->width;
-        $template->height = $this->height;
-        $template->tabs = $this->tabs;
-        $template->hide_cover = (string)$this->hide_cover;
-        $template->cta = (string)$this->cta;
-        $template->small_header = (string)$this->small_header;
-        $template->adapt_width = (string)$this->adapt_width;
         $template->link = $this->pageLink;
-        
-        $template->render(__DIR__ .'/page.latte');
+        if($this->type){
+	  $template->badgeType = $this->badgeType;
+	  $template->scheme = $this->scheme;
+	  $template->tagline = (string)$this->tagline;
+	  $template->coverphoto = (string)$this->coverphoto;
+	  $template->render(__DIR__ .'/page.latte');
+        }else{
+	  $template->size = $this->size;
+	  $template->name = $this->name;
+	  $template->render(__DIR__ .'/pageIcon.latte');
+        }
     }
 }

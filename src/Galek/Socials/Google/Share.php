@@ -22,16 +22,29 @@ namespace Galek\Socials\Google;
  *
  * @author Jan Galek
  * 
+ * @method Share setSize(string $size) Size of Button
+ * @method Share setWidth(integer $width) Width Button
+ * @method Share setLayout(string $layout) Layout type
+ * @method Share setAlign(string $align) Sets the horizontal alignment of the button assets within its frame.
  */
 class Share extends Google{
     
-    /** @var string|const Layout */
-    public $layout = 'box_count';
+    /** @var string|const Size of Button */
+    public $size = NULL;
+    /** @var integer Width Button */ 
+    public $width = 300;
+    /** @var string|const Layout Type */
+    public $layout = 'inline';
+    /** @var string|const Sets the horizontal alignment of the button assets within its frame. */
+    public $align = 'left';
     
     public function render(){
         $template = $this->template;
+        $template->width = $this->width;
         $template->layout = $this->layout;
+        $template->size = $this->size;
         $template->link = $this->link;
+        $template->align = $this->align;
         $template->render(__DIR__ .'/share.latte');
     }
     
