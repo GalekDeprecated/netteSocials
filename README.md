@@ -1,5 +1,7 @@
 # netteSocials
 
+[![Join the chat at https://gitter.im/GcoreCZ/netteSocials](https://badges.gitter.im/GcoreCZ/netteSocials.svg)](https://gitter.im/GcoreCZ/netteSocials?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Plugin for Nette framework
 
 ##Facebook
