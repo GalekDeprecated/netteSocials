@@ -3,4 +3,7 @@ php:
     - 5.6
     - 7.0
 
-composer require nette/nette": "^2.3"
+before_script:
+    - travis retry composer require nette/nette": "^2.3"
+
+sudo: false
