@@ -4,8 +4,8 @@
     "license": "GPL-3.0",
     "authors": [
         {
-            "name": "Jan Galek",
-            "email": "admin@gcore.cz"
+	  "name": "Jan Galek",
+	  "email": "admin@gcore.cz"
         }
     ],
     "autoload": {
