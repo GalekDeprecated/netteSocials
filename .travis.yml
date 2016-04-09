@@ -3,3 +3,38 @@ php:
     - 5.6
     - 7.0
     - hhvm
+
+env:
+    - PHP_BIN=php
+    - PHP_BIN=php-cgi
+
+matrix:
+    allow_failures:
+        - php: hhvm
+
+    exclude:
+        - php: hhvm
+          env: PHP_BIN=php-cgi
+
+    include:
+        - php: 5.6
+          env: dependencies="--prefer-lowest --prefer-stable" PHP_BIN=php
+
+script:
+    - vendor/bin/tester -p $PHP_BIN tests -s
+    - php temp/code-checker/src/code-checker.php --short-arrays
+
+after_failure:
+    # Print *.actual content
+    - for i in $(find tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
+
+before_script:
+    # Install Nette Tester & Code Checker
+    - travis_retry composer update --no-interaction --prefer-dist $dependencies
+    - travis_retry composer create-project nette/code-checker temp/code-checker ~2.5 --no-interaction
+
+sudo: false
+
+cache:
+    directories:
+        - $HOME/.composer/cache
