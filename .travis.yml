@@ -35,7 +35,7 @@ install:
   - composer install --no-interaction --prefer-source
  
 script:
-  - ./vendor/bin/tester -p $TESTER_PHP_BIN -c ./tests/php.ini -s ./tests/
+  - ./vendor/bin/tester -p $TESTER_PHP_BIN
 
 after_failure:
   # Vytiskne obsah souborů *.actual
