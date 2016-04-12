@@ -30,6 +30,10 @@ use Nette\Application\UI\Control;
  * @method Facebook setLang(string $lang) set ISO code lang https://www.facebook.com/translations/FacebookLocales.xml
  * @method Facebook setPageLink(string $pageLink) Set Url to Facebook page
  * @method Facebook setLink(string $link) Link to action
+ * @method string getApiKey() Get api key
+ * @method string getLang() Get ISO code of lang
+ * @method string getPageLink() Get Url to Facebook page
+ * @method string getLink() Get Link to action
  */
 class Facebook extends Control{
     

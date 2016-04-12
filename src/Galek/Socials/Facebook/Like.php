@@ -27,9 +27,9 @@ namespace Galek\Socials\Facebook;
  * @method Like setShare(boolean $share) Show Friend's faces
  * @method Like setWidth(integer $width) Width Button
  * @method Like setType(string $type) Type button
- * @method Like setLayout(string layout) Layout
+ * @method Like setLayout(string $layout) Layout
  */
-final class Like extends Facebook{
+class Like extends Facebook{
     
     /** @var string|const The color scheme used by the plugin. Can be "light" or "dark". */
     public $scheme = 'light';
