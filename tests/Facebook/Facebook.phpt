@@ -49,9 +49,9 @@ class TestPresenter extends UI\Presenter
 	return $control;
     }
     
-    public function te(){
+   /* public function te(){
 	$this['like']->render();
-    }
+    }*/
     
 }
 
@@ -61,7 +61,7 @@ test(function(){
     $control->setLang(Facebook::LANG_CZ);
     Assert::equal(Facebook::LANG_CZ, $control->getLang());
     
-    Assert::equal('', $control->render());
+    //Assert::equal('', $control->render());
 });
 
 
