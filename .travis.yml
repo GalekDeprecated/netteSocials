@@ -32,10 +32,10 @@ before_install:
   - composer self-update
 
 install:
-  - composer install
+  - composer install --no-interaction --prefer-source
  
 script:
-  - ./vendor/bin/tester -p $TESTER_PHP_BIN
+  - ./vendor/bin/tester -p $TESTER_PHP_BIN -c ./tests/php.ini -s ./tests/
 
 after_failure:
   # Vytiskne obsah souborů *.actual
