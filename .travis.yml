@@ -1,3 +1,4 @@
+sudo: true
 language: php
 
 php:
@@ -32,9 +33,6 @@ before_install:
 
 install:
   - composer install --no-interaction --prefer-source
-  
-before_script:
-  - chmod +x grailsw
  
 script:
   - ./vendor/bin/tester -p $TESTER_PHP_BIN -c ./tests/php.ini -s ./tests/
