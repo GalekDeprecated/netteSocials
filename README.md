@@ -3,6 +3,7 @@
 [![Travis] (https://travis-ci.org/JanGalek/netteSocials.svg?branch=master)](https://travis-ci.org/JanGalek/netteSocials)
 [![Join the chat at https://gitter.im/GcoreCZ/netteSocials](https://badges.gitter.im/GcoreCZ/netteSocials.svg)](https://gitter.im/GcoreCZ/netteSocials?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Downloads this Month](https://img.shields.io/packagist/dm/galek/nette-socials.svg)](https://packagist.org/packages/galek/nette-socials)
+
 Plugin for Nette framework
 
 ##Facebook
