@@ -3,13 +3,13 @@ Příklad použití:
 #Config
 ```config
 services:
-	- Galek\Socials\Facebook\Facebook('123456789') //Api klíč
+	- Galek\Socials\Facebook\Config('123456789') //Api klíč
 ```
 
 ###Config Extends
 ```config
 services:
-	- Galek\Socials\Facebook\Facebook('123456789','cs_CZ') //Api klíč a nastavení jazyka
+	- Galek\Socials\Facebook\Config('123456789','cs_CZ') //Api klíč a nastavení jazyka
 ```
 
 ###Presenter

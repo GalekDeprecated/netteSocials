@@ -3,13 +3,13 @@ Example use:
 #Config
 ```config
 services:
-	- Galek\Socials\Facebook\Facebook('123456789') //Api key
+	- Galek\Socials\Facebook\Config('123456789') //Api key
 ```
 
 ###Config Extends
 ```config
 services:
-	- Galek\Socials\Facebook\Facebook('123456789','cs_CZ') //Api key and set language
+	- Galek\Socials\Facebook\Config('123456789','cs_CZ') //Api key and set language
 ```
 
 ###Presenter
