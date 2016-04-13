@@ -30,7 +30,7 @@ namespace Galek\Socials\Facebook;
  * @method PagePlugin setSmallHeader(boolean $small_header) Use the small header instead
  * @method PagePlugin setAdaptWidth(boolean $adapt_width) Try to fit inside the container width
  */
-final class PagePlugin extends Facebook{
+final class PagePlugin extends Config{
     
     /** @var integer Width Button */ 
     public $width = 340;

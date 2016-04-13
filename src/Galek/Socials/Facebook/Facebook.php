@@ -35,7 +35,7 @@ use Nette\Application\UI\Control;
  * @method string getPageLink() Get Url to Facebook page
  * @method string getLink() Get Link to action
  */
-class Facebook extends Control{
+abstract class Facebook extends Control{
     
     const LANG_CZ = 'cs_CZ',
 	LANG_US = 'en_US',
@@ -78,11 +78,6 @@ class Facebook extends Control{
     public $link = '//this';
     /** @var string Url to Facebook page */
     public $pageLink = 'https://www.facebook.com/Jan.Galek.Tvorba.Webu';
-
-    public function __construct($apiKey,$lang='cs_CZ') {
-        $this->apiKey = $apiKey;
-        $this->lang = $lang;
-    }
     
     /**
      * Set type Share
@@ -130,19 +125,6 @@ class Facebook extends Control{
      */
     public function useSend(){
         return new Send($this->apiKey,  $this->lang);
-    }
-
-    public function render(){
-        $template = $this->template;
-        
-        $template->render(__DIR__ .'/default.latte');
-    }
-
-    public function renderJs(){
-        $template = $this->template;
-        $template->apiKey = $this->apiKey;
-        $template->lang = $this->lang;
-        $template->render(__DIR__ .'/js.latte');
     }
     
 }

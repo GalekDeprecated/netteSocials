@@ -29,39 +29,23 @@ namespace Galek\Socials\Facebook;
  * @method Like setType(string $type) Type button
  * @method Like setLayout(string $layout) Layout
  */
-final class Like extends Config{
-    
-    /** @var string|const The color scheme used by the plugin. Can be "light" or "dark". */
-    public $scheme = 'light';
-    /** @var boolean If your web site or online service, or a portion of your service, is directed to children under 13 you must enable this */
-    public $kid_directed = false;
-    /** @var boolean Show Friend's faces */
-    public $show_faces = true;
-    /** @var boolean Include Share Button */
-    public $share = false;
-    /** @var integer Width Button */ 
-    public $width = NULL;
-    /** @var string|const Layout Type */
-    public $layout = 'standard';
-    /** @var string|const Type button */
-    public $type = 'like';
+class Config extends Facebook{
 
+    public function __construct($apiKey = NULL,$lang='cs_CZ') {
+        $this->apiKey = $apiKey;
+        $this->lang = $lang;
+    }
 
     public function render(){
         $template = $this->template;
-        $template->faces = (string)$this->show_faces;
-        $template->share = (string)$this->share;
-        $template->scheme = $this->scheme;
-        $template->kid_directed = $this->kid_directed;
-        $template->width = $this->width;
-        $template->layout = $this->layout;
-        $template->type = $this->type;
-        $template->link = $this->link;
         
-        $template->render(__DIR__ .'/like.latte');
+        $template->render(__DIR__ .'/default.latte');
     }
-    
-    public function create(){
-        return new Like($this->apiKey);
+
+    public function renderJs(){
+        $template = $this->template;
+        $template->apiKey = $this->apiKey;
+        $template->lang = $this->lang;
+        $template->render(__DIR__ .'/js.latte');
     }
 }

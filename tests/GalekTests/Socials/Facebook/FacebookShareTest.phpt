@@ -55,7 +55,7 @@ class TestPresenter extends UI\Presenter
     }
     
 }
-
+/*
 test(function () {
 	$control = new FShare('284382148574512');
 	$control->setLang(FShare::LANG_CZ);
@@ -71,3 +71,4 @@ test(function () { // compatibility with 2.0
 	$presenter['name'] = $form;
 	Assert::false(isset($form[TestPresenter::SIGNAL_KEY]));
 });
+*/

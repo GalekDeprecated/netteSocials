@@ -38,30 +38,24 @@ require __DIR__ . '/../bootstrap.php';
 class TestPresenter extends UI\Presenter
 {
 
-    protected function createComponentLike(){
+    protected function createComponentFBLike(){
 	$control = new Facebook('284382148574512');
 	Assert::equal('284382148574512', $control->getApiKey());
 	
 	$control->setLang(FLike::LANG_CZ);
 	Assert::equal(Facebook::LANG_CZ, $control->getLang());
 	Assert::notEqual('cz', $control->getLang());
-	
+
 	return $control;
     }
     
-   /* public function te(){
-	$this['like']->render();
-    }*/
-    
 }
-
+/*
 test(function(){
     $control = new Facebook('284382148574512');
     Assert::equal('284382148574512', $control->getApiKey());
     $control->setLang(Facebook::LANG_CZ);
     Assert::equal(Facebook::LANG_CZ, $control->getLang());
-    
-    //Assert::equal('', $control->render());
 });
 
 
@@ -70,6 +64,6 @@ test(function () { // compatibility with 2.0
 	$form = new UI\Form;
 	$form->setAction('action');
 	$presenter['name'] = $form;
-	//$presenter->te();
 	Assert::false(isset($form[TestPresenter::SIGNAL_KEY]));
 });
+*/

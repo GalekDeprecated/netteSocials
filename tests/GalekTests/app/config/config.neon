@@ -1,0 +1,19 @@
+# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+# https://nette.org/security-warning
+
+parameters:
+        facebookAPI = '638598666171888'
+
+
+php:
+	date.timezone: Europe/Prague
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\Presenters\*Presenter
+
+services:
+	router: App\RouterFactory::createRouter
+	- Galek\Socials\Facebook\Config(%facebookAPI%)

@@ -24,7 +24,7 @@ namespace Galek\Socials\Facebook;
  * @method Send setScheme(string $scheme) The color scheme used by the plugin. Can be "light" or "dark".
  * @method Send setKidDirected(boolean $kid_directed) If your web site or online service, or a portion of your service, is directed to children under 13 you must enable this 
  */
-final class Send extends Facebook{
+final class Send extends Config{
     
     /** @var string|const Scheme color light|dark */
     public $scheme = 'light';

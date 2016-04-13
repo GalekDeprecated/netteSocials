@@ -28,7 +28,7 @@ namespace Galek\Socials\Facebook;
  * @method Follow setHeight(integer $height) Height Button
  * @method Follow setLayout(string layout) Layout
  */
-final class Follow extends Facebook{
+final class Follow extends Config{
     
     /** @var string|const The color scheme used by the plugin. Can be "light" or "dark". */
     public $scheme = 'light';

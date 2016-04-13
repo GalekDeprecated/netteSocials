@@ -17,23 +17,9 @@
  */
 
 namespace Galek\Socials\Facebook;
-/**
- * Description of Share
- *
- * @author Jan Galek
- * @method Share setLayout(string layout) Layout
- * 
- */
-class Share extends Config{
-    
-    /** @var string|const Layout */
-    public $layout = 'box_count';
-    
-    public function render(){
-        $template = $this->template;
-        $template->layout = $this->layout;
-        $template->link = $this->link;
-        $template->render(__DIR__ .'/share.latte');
-    }
-    
+
+interface ILikeFactory {
+    /** @return Like */
+    function create();
+     
 }
