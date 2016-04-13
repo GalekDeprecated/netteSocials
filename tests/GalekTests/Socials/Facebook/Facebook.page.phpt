@@ -26,6 +26,7 @@
 use Nette\Application\UI;
 
 use Tester\Assert;
+use Galek\Socials\Facebook\ConfigFactory;
 use Galek\Socials\Facebook\Facebook;
 use Galek\Socials\Facebook\Like as FLike;
 
@@ -39,7 +40,7 @@ class TestPresenter extends UI\Presenter
 {
 
     protected function createComponentFBLike(){
-	$control = new Facebook('284382148574512');
+	$control = new ConfigFactory('284382148574512');
 	Assert::equal('284382148574512', $control->getApiKey());
 	
 	$control->setLang(FLike::LANG_CZ);
@@ -50,20 +51,3 @@ class TestPresenter extends UI\Presenter
     }
     
 }
-/*
-test(function(){
-    $control = new Facebook('284382148574512');
-    Assert::equal('284382148574512', $control->getApiKey());
-    $control->setLang(Facebook::LANG_CZ);
-    Assert::equal(Facebook::LANG_CZ, $control->getLang());
-});
-
-
-test(function () { // compatibility with 2.0
-	$presenter = new TestPresenter;
-	$form = new UI\Form;
-	$form->setAction('action');
-	$presenter['name'] = $form;
-	Assert::false(isset($form[TestPresenter::SIGNAL_KEY]));
-});
-*/
