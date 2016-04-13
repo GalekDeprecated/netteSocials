@@ -1,6 +1,6 @@
 {
     "name": "galek/nette-socials",
-    "description": "Description of project netteSocials.",
+    "description": "Socials button plugin for Nette framework.",
     "license": "GPL-3.0",
     "authors": [
         {
