@@ -15,7 +15,7 @@ Plugin for Nette framework
 * Page Plugin
 
 ##Comming soon
-* Google (dev)
+* Google (testing)
 * Twitter
 * if you want next, you can contact me ;)
 
@@ -42,9 +42,14 @@ or manual edit composer.json in your project
 
 More Informations in [CZ](/docs/facebook/cs.md),[EN](/docs/facebook/en.md)
 
+###Instalation Google
+
+More Informations in [CZ](/docs/google/cs.md),[EN](/docs/google/en.md)
+
 ####Config Basic
 ```config
 services:
-	- Galek\Socials\Facebook\Facebook('123456789') //Api key
+	- Galek\Socials\Facebook\Config('123456789') //Api key
+	- Galek\Socials\Google\Config() //Api key
 ```
 
