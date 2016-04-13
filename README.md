@@ -54,6 +54,6 @@ services:
 ```
 
 ###Fast local test
-after download, you can look to fast test render. You need to go (/tests/GalekTests/) of repository dir.
+after download, you can look to fast test render. You need to go [TestFolder](/tests/GalekTests/) of repository dir.
 
 After tests, you can remove tests dir ;)
