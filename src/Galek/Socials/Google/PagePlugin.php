@@ -57,7 +57,7 @@ final class PagePlugin extends Google{
     /** @var boolean True = Badge, False = Icon */
     public $type = TRUE;
     /** @var string|const [person,page,community] */
-    public $badgeType = TRUE;
+    public $badgeType = 'page';
     /** @var boolean Displays the user's tag line if set to true.*/
     public $tagline = true;
     /** @var boolean Displays the cover photo in the badge if set to true and the photo exists.*/
@@ -70,8 +70,8 @@ final class PagePlugin extends Google{
         if($this->type){
 	  $template->badgeType = $this->badgeType;
 	  $template->scheme = $this->scheme;
-	  $template->tagline = (string)$this->tagline;
-	  $template->coverphoto = (string)$this->coverphoto;
+	$template->tagline = ($this->tagline ? 'true' : 'false');
+	  $template->coverphoto = ($this->coverphoto ? 'true' : 'false');
 	  $template->render(__DIR__ .'/page.latte');
         }else{
 	  $template->size = $this->size;

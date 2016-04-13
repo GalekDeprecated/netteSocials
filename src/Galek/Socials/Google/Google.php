@@ -61,7 +61,7 @@ class Google extends Control{
   /** @var string ISO code of lang */
     public $lang;
     /** @var string Url to Facebook page */
-    public $pageLink = 'https://www.facebook.com/Jan.Galek.Tvorba.Webu';
+    public $pageLink = 'https://plus.google.com/u/1/b/110379807484552807904/+GcoreCz';
     /** @var string Sets the loading mechanism to use. */
     public $parse = 'onload';
     /** @var string Link to action */
@@ -117,12 +117,6 @@ class Google extends Control{
      */
     public function useSend(){
         return new Send($this->lang);
-    }
-
-    public function render(){
-        $template = $this->template;
-        
-        $template->render(__DIR__ .'/default.latte');
     }
 
     public function renderJs(){

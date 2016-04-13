@@ -51,7 +51,7 @@ final class Plus extends Google{
         $template->size = $this->size;
         $template->link = $this->link;
         $template->align = $this->align;
-        $template->recommendations = $this->recommendations;
+        $template->recommendations = ($this->recommendations ? 'true' : 'false');
         $template->count = $this->count;
         $template->render(__DIR__ .'/plus.latte');
     }

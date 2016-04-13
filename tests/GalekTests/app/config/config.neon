@@ -4,7 +4,6 @@
 parameters:
         facebookAPI = '638598666171888'
 
-
 php:
 	date.timezone: Europe/Prague
 
@@ -12,8 +11,12 @@ php:
 application:
 	errorPresenter: Error
 	mapping:
-		*: App\Presenters\*Presenter
+		*: App\*Module\Presenters\*Presenter
 
 services:
-	router: App\RouterFactory::createRouter
+	- App\RouterFactory
+	router: @App\RouterFactory::createRouter
+	- Galek\Socials\Facebook\FacebookFactory(%facebookAPI%)
 	- Galek\Socials\Facebook\Config(%facebookAPI%)
+	- Galek\Socials\Google\Config
+	- Galek\Socials\Google\GoogleFactory

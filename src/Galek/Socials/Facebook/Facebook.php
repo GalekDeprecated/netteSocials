@@ -127,4 +127,18 @@ abstract class Facebook extends Control{
         return new Send($this->apiKey,  $this->lang);
     }
     
+
+    public function render(){
+        $template = $this->template;
+        
+        //$template->render(__DIR__ .'/default.latte');
+    }
+
+    public function renderJs(){
+        $template = $this->template;
+        $template->apiKey = $this->apiKey;
+        $template->lang = $this->lang;
+        $template->render(__DIR__ .'/js.latte');
+    }
+    
 }

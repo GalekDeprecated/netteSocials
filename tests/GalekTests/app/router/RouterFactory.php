@@ -11,9 +11,9 @@ class RouterFactory
 	 * @return Nette\Application\IRouter
 	 */
 	public static function createRouter()
-	{
+	{		
 		$router = new RouteList;
-		$router[] = new Route('<presenter=Homepage>/<action>[/<id>]', 'Homepage:default');
+		$router[] = new Route('//%domain%/%basePath%/<presenter>/<action>[/<id>]', 'Homepage:default');
 		return $router;
 	}
 }

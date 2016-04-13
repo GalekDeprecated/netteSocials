@@ -28,6 +28,7 @@ namespace Galek\Socials\Facebook;
  * @method Like setWidth(integer $width) Width Button
  * @method Like setType(string $type) Type button
  * @method Like setLayout(string $layout) Layout
+ * @method string getType() Get Type button
  */
 final class Like extends Config{
     
@@ -45,23 +46,27 @@ final class Like extends Config{
     public $layout = 'standard';
     /** @var string|const Type button */
     public $type = 'like';
-
+    
+    public function __construct($apiKey,$lang='cs_CZ') {
+	parent::__construct($apiKey, $lang);
+    }
 
     public function render(){
         $template = $this->template;
-        $template->faces = (string)$this->show_faces;
-        $template->share = (string)$this->share;
+        $template->faces = ($this->show_faces ? 'true' : 'false');
+        $template->share = ($this->share ? 'true' : 'false');
         $template->scheme = $this->scheme;
-        $template->kid_directed = $this->kid_directed;
+	$template->kid_directed = ($this->kid_directed ? 'true' : 'false');
         $template->width = $this->width;
         $template->layout = $this->layout;
-        $template->type = $this->type;
+        $template->type = $this->getType();
+        //$template->type = $this->type;
         $template->link = $this->link;
         
         $template->render(__DIR__ .'/like.latte');
     }
-    
+    /*
     public function create(){
         return new Like($this->apiKey);
-    }
+    }*/
 }

@@ -35,17 +35,8 @@ class Config extends Facebook{
         $this->apiKey = $apiKey;
         $this->lang = $lang;
     }
-
-    public function render(){
-        $template = $this->template;
-        
-        $template->render(__DIR__ .'/default.latte');
-    }
-
-    public function renderJs(){
-        $template = $this->template;
-        $template->apiKey = $this->apiKey;
-        $template->lang = $this->lang;
-        $template->render(__DIR__ .'/js.latte');
+    
+    public function create(){
+	return $this;
     }
 }
