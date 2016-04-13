@@ -13,6 +13,8 @@ list($_b, $_g, $_l) = $template->initialize('68e1498722', 'html')
 //
 if (!function_exists($_b->blocks['content'][] = '_lb6252f5c50a_content')) { function _lb6252f5c50a_content($_b, $_args) { foreach ($_args as $__k => $__v) $$__k = $__v
 ?><div>
+    <a href="<?php echo Latte\Runtime\Filters::escapeHtml($_control->link("Homepage:default"), ENT_COMPAT) ?>
+"><- back to List</a>
     <h2>Facebook</h2>
     <hr>
     <aside>

@@ -53,3 +53,5 @@ services:
 	- Galek\Socials\Google\Config() //Api key
 ```
 
+###Fast local test
+after download, you can look to fast test render. You need to go (/tests/GalekTests/) of repository dir.
