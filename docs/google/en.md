@@ -27,20 +27,20 @@ abstract class BasePresenter{
     }
 
     public function createComponentGooglePlus(){
-	$control = $this->google->usePlus();
+	$control = $this->google->set(Google::USE_PLUS); // must be inline
 	return $control;
     }
     public function createComponentGoogleFollow(){
-	$control = $this->google->useFollow();
+	$control = $this->google->set(Google::USE_FOLLOW); // must be inline
 	$control->setPageLink('https://plus.google.com/+GcoreCz');
 	return $control;
     }
     public function createComponentGoogleShare(){
-	$control = $this->google->useShare();
+	$control = $this->google->set(Google::USE_SHARE); // must be inline
 	return $control;
     }
     public function createComponentGooglePage(){
-	$control = $this->google->usePage();
+	$control = $this->google->set(Google::USE_PAGE); // must be inline
 	$control->setPageLink('https://plus.google.com/+GcoreCz');
 	return $control;
     }

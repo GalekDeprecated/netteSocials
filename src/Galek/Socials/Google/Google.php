@@ -34,28 +34,33 @@ use Nette\Application\UI\Control;
 class Google extends Control{
     
     const LANG_CZ = 'cs',
-	LANG_US = 'en-US',
-	LANG_UK = 'en-GB',
-	LANG_SK = 'sk';
+	  LANG_US = 'en-US',
+	  LANG_UK = 'en-GB',
+	  LANG_SK = 'sk';
     
-    const LAYOUT_LINE = 'inline',
-          LAYOUT_BUBBLE = NULL,
-	LAYOUT_BUBBLE_VERTICAL = 'vertical-bubble',
-	LAYOUT_NONE = 'none';
+    const LAYOUT_LINE		 = 'inline',
+          LAYOUT_BUBBLE		 = NULL,
+	  LAYOUT_BUBBLE_VERTICAL = 'vertical-bubble',
+	  LAYOUT_NONE		 = 'none';
     
-    const SIZE_SMALL = 'small',
-	SIZE_MEDIUM = 'medium',
-	SIZE_STANDARD = NULL,
-	SIZE_TALL = 'tall';
+    const SIZE_SMALL	= 'small',
+	  SIZE_MEDIUM	= 'medium',
+	  SIZE_STANDARD = NULL,
+	  SIZE_TALL	= 'tall';
     
     const PARSE_EXPLICIT = 'explicit',
           PARSE_ONLOAD = 'onload';
     
-    const ALIGN_LEFT = 'left',
-	ALIGN_RIGHT = 'right';
+    const ALIGN_LEFT  = 'left',
+	  ALIGN_RIGHT = 'right';
     
-    const BADGE_TYPE_ICON = FALSE,
-	BADGE_TYPE_BADGE = TRUE;
+    const BADGE_TYPE_ICON  = FALSE,
+	  BADGE_TYPE_BADGE = TRUE;
+    
+    const USE_FOLLOW = 'Galek\Socials\Google\Follow',
+	  USE_PAGE   = 'Galek\Socials\Google\PagePlugin',
+	  USE_PLUS   = 'Galek\Socials\Google\Plus',
+	  USE_SHARE  = 'Galek\Socials\Google\Share';
 
 
   /** @var string ISO code of lang */
@@ -67,11 +72,24 @@ class Google extends Control{
     /** @var string Link to action */
     public $link = '//this';
     
+    public $use;
+
+
     public function __construct($lang='cs') {
         $this->lang = $lang;
     }
     
     /**
+     * Set Type of Google button
+     * Use consts USE_*
+     * @param Google $useType
+     * @return Follow|Share|PagePlugin|Plus
+     */
+    public function set($useType){
+	return new $useType($this->lang);
+    }
+
+        /**
      * Set type Share
      * @return \Galek\Socials\Facebook\Share
      */

@@ -70,6 +70,14 @@ abstract class Facebook extends Control{
 	TAB_EVENTS_AND_MESSAGES = 'events,messages',
 	TAB_ALL = 'timeline,events,messages';
     
+    
+    const USE_FOLLOW = 'Galek\Socials\Facebook\Follow',
+	  USE_PAGE   = 'Galek\Socials\Facebook\PagePlugin',
+	  USE_LIKE   = 'Galek\Socials\Facebook\Like',
+	  USE_SEND   = 'Galek\Socials\Facebook\Send',
+	  USE_COMMENTS   = 'Galek\Socials\Facebook\Comments',
+	  USE_SHARE  = 'Galek\Socials\Facebook\Share';
+    
     /** @var string Facebook API key */
     public $apiKey;
     /** @var string ISO code of lang */
@@ -78,6 +86,16 @@ abstract class Facebook extends Control{
     public $link = '//this';
     /** @var string Url to Facebook page */
     public $pageLink = 'https://www.facebook.com/Jan.Galek.Tvorba.Webu';
+    
+    /**
+     * Set Type of Google button
+     * Use consts USE_*
+     * @param Facebook $useType
+     * @return Follow|Share|PagePlugin|Like|Send|Comments
+     */
+    public function set($useType){
+	return new $useType($this->lang);
+    }
     
     /**
      * Set type Share
